@@ -1,0 +1,52 @@
+package proyecto1;
+import java.util.*;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("ingrese tamaño del arreglo");
+        int tam=scanner.nextInt();
+        int [] arre=new int[tam];
+
+        for (int i=0;i<tam;i++){
+            arre[i]=scanner.nextInt();
+
+        }
+        System.out.println("arreglo:");
+        for (int i=0;i<tam;i++){
+            System.out.print("["+arre[i]+"]");
+        }
+        System.out.println("");
+        System.out.println("primos");
+        for (int i=0;i<tam;i++){
+            int auto=arre[i];
+            int retorno=primo(auto);
+            if(retorno==2){
+                System.out.print("["+arre[i]+"]");
+            }
+
+        }
+    }
+    public static int primo(int a){//funcion donde se verifica si es numero primo
+        int band = 0;
+            band=0;
+            for (int i = 1; i <= a; i++) {
+                if (a % i == 0) {
+                    band++;
+                }
+            }
+            if (band != 2) {
+                //aca no es primo
+                return 1;
+            } else {
+                //aca si es primo
+                return 2;
+            }
+
+
+
+    }
+}
