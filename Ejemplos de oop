@@ -1,0 +1,145 @@
+//clase empleado
+public class Empleado {
+
+
+    private int edad;
+    private String nombre;
+    private float sueldo;
+
+
+
+    public Empleado(String nombre){
+        this.nombre=nombre;
+
+    }
+
+    public void setEdad(int edad ){
+        this.edad=edad;// esto trabaja con el atributo global(si no esta se asigna la variable a la misma variable)
+
+    }
+    public int getEdad(){
+        return this.edad;
+
+    }
+
+    public String getNombre(){
+        return this.nombre;
+    }
+
+
+    public void cobrar(float sueldo){
+        this.sueldo=sueldo * 1.1F;
+    }
+
+
+
+
+
+}
+//clase cuenta
+public class Cuenta {
+
+    private String titular;
+    private float cantidad;
+    
+
+
+    public void settitular(String titular){
+        this.titular=titular;
+
+    }
+    public String getTitular(){
+        return this.titular;
+    }
+
+    public void setCantidad(float cantidad){
+        this.cantidad=cantidad;
+    }
+    public float getCantidad(){
+        return this.cantidad;
+    }
+
+    public Cuenta(String titular){
+       this.titular=titular;
+    }
+
+
+}
+//clase serie
+public class Serie {
+
+    String titulo;
+    int numeroDeTemporada;
+    boolean  entregado;
+    String genero;
+    String creador;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getNumeroDeTemporada() {
+        return numeroDeTemporada;
+    }
+
+    public void setNumeroDeTemporada(int numeroDeTemporada) {
+        this.numeroDeTemporada = numeroDeTemporada;
+    }
+
+    public boolean isEntregado() {
+        return entregado;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getCreador() {
+        return creador;
+    }
+
+    public void setCreador(String creador) {
+        this.creador = creador;
+    }
+
+    @Override
+    public String toString() {
+        return "Serie{" +
+                "titulo='" + titulo + '\'' +
+                ", numeroDeTemporada=" + numeroDeTemporada +
+                ", entregado=" + entregado +
+                ", genero='" + genero + '\'' +
+                ", creador='" + creador + '\'' +
+                '}';
+    }
+}
+//claseMain
+public class Main {
+
+    public static void main(String[] args) {
+
+
+        Empleado e1 = new Empleado("javi");
+
+        e1.setEdad(25);
+        e1.cobrar(2000F);
+
+        System.out.println(e1.getEdad());
+        System.out.println(e1.getNombre());
+        System.out.println();
+
+
+
+
+
+    }
+}
+
