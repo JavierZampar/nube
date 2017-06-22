@@ -1,0 +1,263 @@
+*******Matriz vaca*********
+import java.util.*;
+
+public class Vaca {
+    public static void main(String[] args) {
+    Scanner scanner=new Scanner(System.in);
+            
+    int fila=8;
+    int columna=0;
+    columna=scanner.nextInt();
+    double [][] matrix=new double[fila][columna+1];
+    
+    for(int i=0;i<7;i++){
+
+        for(int j=0;j<columna;j++){
+            
+            matrix[i][j]=scanner.nextDouble();
+            matrix[7][j]=matrix[7][j]+matrix[i][j];
+            matrix[7][columna]=matrix[7][columna]+matrix[i][j];           
+        }
+        
+    }
+    for(int i=0;i<fila;i++){
+        System.out.println();
+        for(int j=0;j<columna+1;j++){
+            System.out.print("["+matrix[i][j]+"]");
+                       
+        }
+        
+    }
+    
+    int c = 0;
+    for(int i=0;i<7;i++){
+           double a = 0;
+          
+        for(int j=0;j<columna;j++){
+            a = a + matrix[i][j];
+             if(j+1 == columna){
+             matrix[i][j+1] = a;
+             }
+             
+        }
+        
+    }
+        System.out.println("la concha de guido");
+    for(int i=0;i<fila;i++){
+        System.out.println();
+        for(int j=0;j<columna+1;j++){
+            System.out.print("["+matrix[i][j]+"]");
+                       
+        }
+        
+    }
+    double max=0;
+    int dia=0;
+    for(int i=0;i<fila-1;i++){
+        if(matrix[i][columna]>max){
+            max=matrix[i][columna];
+            dia=i;
+        }
+    
+    
+    }
+       System.out.println("\n"+dia);
+    switch(dia){
+        case 0 :System.out.println("el dia que mas hubo mas lechona es: lunes");
+        break;
+        case 1: System.out.println("el dia que mas hubo mas lechona es: martes");
+        break;
+        case 2:System.out.println("el dia que mas hubo mas lechona es: miercoles");
+        break;
+         case 3 :System.out.println("el dia que mas hubo mas lechona es: jueves");
+        break;
+         case 4 :System.out.println("el dia que mas hubo mas lechona es: viernes");
+        break;
+         case 5 :System.out.println("el dia que mas hubo mas lechona es: sabado");
+        break;
+         case 6 :System.out.println("el dia que mas hubo mas lechona es: domingo");
+        break;
+        
+        
+    }
+    
+    
+    }
+}
+
+*************clase fraccion*******
+public class Fraccion {
+    
+    private int dividendo;
+    private int divisor;
+
+    public int getDividendo() {
+        return dividendo;
+    }
+
+    public void setDividendo(int dividendo) {
+        this.dividendo = dividendo;
+    }
+
+    public int getDivisor() {
+        return divisor;
+    }
+
+    public void setDivisor(int divisor) {
+        this.divisor = divisor;
+    }
+       public Fraccion(){}
+       
+    public Fraccion(int dividendo, int divisor) {
+        this.dividendo = dividendo;
+        this.divisor = divisor;
+    }
+    
+    public String toString(){
+        return dividendo+"/"+divisor;
+       
+    }     
+    public Fraccion sumar(Fraccion fr2){
+        return new Fraccion(fr2.getDivisor()*dividendo+fr2.dividendo*divisor,divisor*fr2.divisor);
+    }
+    public Fraccion multiplicar(Fraccion fr2){
+        return new Fraccion(dividendo*fr2.dividendo,divisor*fr2.divisor);
+    }
+    
+    
+    
+    
+    
+}
+***********main fraccion****
+public class GuiaObjetos {
+
+  /*
+    public static void main(String[] args) {
+           
+        Fraccion fr1=new Fraccion(1,2);
+        Fraccion fr2=new Fraccion(1,4);
+        Fraccion resultado=fr1.sumar(fr2);
+        System.out.println(resultado.toString());
+        System.out.println(fr1.multiplicar(fr2).toString());
+            
+      
+              
+        
+    }
+    */
+    
+    
+    public static void main(String[] args) {
+        
+    }
+    
+}
+*******clase Serie***
+public class Serie {
+
+private String titulo;
+private int numeroDeTemporadas=3;
+private boolean entregado=false;
+private String genero;
+private String creador;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getNumeroDeTemporadas() {
+        return numeroDeTemporadas;
+    }
+
+    public void setNumeroDeTemporadas(int numeroDeTemporadas) {
+        this.numeroDeTemporadas = numeroDeTemporadas;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getCreador() {
+        return creador;
+    }
+
+    public void setCreador(String creador) {
+        this.creador = creador;
+    }
+    
+    public Serie(){}
+    
+    public Serie(String titulo, String creador){
+        this.titulo=titulo;
+        this.creador=creador;
+    }
+    
+    public Serie(String titulo,String creador,int numeroDeTemporadas,String genero){
+        this.creador=creador;
+        this.genero=genero;
+        this.numeroDeTemporadas=numeroDeTemporadas;
+        this.titulo=titulo;
+    }
+    
+    
+    
+
+
+}
+*******clase videojuegos****
+public class VideosJuegos {
+    private String titulo;
+    private int horas=10;
+    private boolean entregado=false;
+    private String compañia;
+    
+    
+    public VideosJuegos(){}
+
+    public VideosJuegos(String titulo,int horas) {
+        this.titulo = titulo;
+        this.horas = horas;
+    }
+
+    public VideosJuegos(String titulo, String compañia,int horas) {
+        this.titulo = titulo;
+        this.compañia = compañia;
+        this.horas = horas;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public int getHoras() {
+        return horas;
+    }
+
+    public String getCompañia() {
+        return compañia;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setHoras(int horas) {
+        this.horas = horas;
+    }
+
+    public void setCompañia(String compañia) {
+        this.compañia = compañia;
+    }
+    
+    
+    
+}
