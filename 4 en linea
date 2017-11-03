@@ -1,0 +1,101 @@
+package com.company;
+import java.util.*;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("JUEGO 4 EN LINEA!!");
+
+        int filas = 6;
+        int columnas = 7;
+        int intentos=21;
+        int posicionBaja=5;
+        boolean finLinea=false;
+        String[][] matriz = new String[filas][columnas];
+
+
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                matriz[i][j] = "O";
+            }
+        }
+
+        for (int i = 0; i < filas; i++) {
+            System.out.println();
+            for (int j = 0; j < columnas; j++) {
+                System.out.print("[" + matriz[i][j] + "]");
+            }
+        }
+        System.out.println("");
+        while(intentos>0){
+            System.out.println("");
+            System.out.println("jugador A elija una columna para ingresar ficha");
+            int columna=sc.nextInt();
+
+                if (matriz[posicionBaja][columna - 1] == "O") {
+                    matriz[posicionBaja][columna - 1] = "X";
+                } else if (matriz[posicionBaja - 1][columna - 1] == "O") {
+                    matriz[posicionBaja - 1][columna - 1] = "X";
+                } else if (matriz[posicionBaja - 2][columna - 1] == "O") {
+                    matriz[posicionBaja - 2][columna - 1] = "X";
+                } else if (matriz[posicionBaja - 3][columna - 1] == "O") {
+                    matriz[posicionBaja - 3][columna - 1] = "X";
+                } else if (matriz[posicionBaja - 4][columna - 1] == "O") {
+                    matriz[posicionBaja - 4][columna - 1] = "X";
+                } else if (matriz[posicionBaja - 5][columna - 1] == "O") {
+                    matriz[posicionBaja - 5][columna - 1] = "X";
+                } else {
+                    System.out.println("no puede colocar mas fichas, elija otra columna");
+
+                }
+
+
+
+
+            for (int i=0;i<6;i++){
+                System.out.println();
+                for (int j=0;j<7;j++){
+                    System.out.print("[" + matriz[i][j] + "]");
+                }
+            }
+            //////////////////////////////////////
+            System.out.println("");
+            System.out.println("jugador B elija una columna para ingresar ficha");
+            columna=sc.nextInt();
+
+
+                if (matriz[posicionBaja][columna - 1] == "O") {
+                    matriz[posicionBaja][columna - 1] = "#";
+                } else if (matriz[posicionBaja - 1][columna - 1] == "O") {
+                    matriz[posicionBaja - 1][columna - 1] = "#";
+                } else if (matriz[posicionBaja - 2][columna - 1] == "O") {
+                    matriz[posicionBaja - 2][columna - 1] = "#";
+                } else if (matriz[posicionBaja - 3][columna - 1] == "O") {
+                    matriz[posicionBaja - 3][columna - 1] = "#";
+                } else if (matriz[posicionBaja - 4][columna - 1] == "O") {
+                    matriz[posicionBaja - 4][columna - 1] = "#";
+                } else if (matriz[posicionBaja - 5][columna - 1] == "O") {
+                    matriz[posicionBaja - 5][columna - 1] = "#";
+                } else {
+                    System.out.println("no se pueden colocar mas fichas, elija otra columna");
+
+                }
+
+            for (int i=0;i<6;i++){
+                System.out.println();
+                for (int j=0;j<7;j++){
+                    System.out.print("[" + matriz[i][j] + "]");
+                }
+            }
+
+
+            intentos--;
+            System.out.println("\n"+intentos);
+        }
+
+
+    }
+
+
+
+
+}
